@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { useState } from 'react';
 import { Formik, Form, ErrorMessage } from 'formik';
 import { Label, Input, Btn } from './ContactFom.styled';
 import * as yup from 'yup';
@@ -8,8 +8,8 @@ const schema = yup.object().shape({
 });
 
 export default function ContactForm({ formSubmitHandler }) {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [name] = useState('');
+  const [number] = useState('');
 
   const handSubmit = (valus, { resetForm }) => {
     formSubmitHandler(valus);
